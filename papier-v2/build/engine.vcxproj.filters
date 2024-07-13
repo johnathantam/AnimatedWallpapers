@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="..">
+      <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:">
+      <UniqueIdentifier>{E5D29F2B-0177-9942-CA95-0FF700094F89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects">
+      <UniqueIdentifier>{465F3669-721F-0CF4-9ADB-48D897EAB275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects\ElectronApps">
+      <UniqueIdentifier>{1B7483E2-69DD-43AF-E4ED-3D6B9C825240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3">
+      <UniqueIdentifier>{774DB13E-54F8-9F70-F04D-0C496182AE1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3\papier-v2">
+      <UniqueIdentifier>{ABC248CE-0B6A-7809-1B92-E4F229A3CC92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3\papier-v2\node_modules">
+      <UniqueIdentifier>{56DF7A98-063D-FB9D-485C-089023B4C16A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3\papier-v2\node_modules\node-gyp">
+      <UniqueIdentifier>{77348C0E-2034-7791-74D5-63C077DF5A3B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3\papier-v2\node_modules\node-gyp\src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..">
+      <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\engine.cc">
+      <Filter>..</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3\papier-v2\node_modules\node-gyp\src\win_delay_load_hook.cc">
+      <Filter>D:\VsCodeProjects\ElectronApps\Papier V2 - Backup V3\papier-v2\node_modules\node-gyp\src</Filter>
+    </ClCompile>
+    <None Include="..\binding.gyp">
+      <Filter>..</Filter>
+    </None>
+  </ItemGroup>
+</Project>

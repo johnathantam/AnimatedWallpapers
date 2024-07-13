@@ -1,0 +1,133 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Papier Show</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Styles/style.css">
+    <script defer src="./scripts/utils.js"></script>
+    <script defer src="./scripts/settings.js"></script>
+    <script defer src="./scripts/pageNavigator.js"></script>
+    <script defer src="./scripts/wallpaper.js"></script>
+    <script defer src="./scripts/renderer.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left-side-navigation-container">
+        <div class="app-icon"></div>
+        <h1 class="header-navigation-text">
+          Animated Wallpapers &nbsp; / 
+          <i class="header-left-side-navigation-icon" style="background-image: url('./images/website/home-icon.svg')"></i>
+          <a class="header-left-side-navigation-link" id="navigate-to-main-application-button">Home</a>
+          &nbsp; /
+          <i class="header-left-side-navigation-icon" style="background-image: url('./images/website/settings-icon.svg')"></i>
+          <a class="header-left-side-navigation-link" id="navigate-to-settings-button">Settings</a>
+        </h1>
+      </div>
+      <div class="header-right-side-container">
+        <p class="header-right-side-app-status" id="pause-or-play-toggle-status-text">Currently Active</p>
+        <label class="header-right-side-app-status-switch">
+          <input type="checkbox" id="pause-or-play-toggle" checked>
+          <span class="header-right-side-app-status-switch-slider"></span>
+        </label>
+      </div>
+    </header>
+    <main class="main-app-container">
+      <section class="wallpaper-editor-and-settings-container">
+        <div class="wallpaper-editor-and-settings-section-container" id="wallpaper-editor-section">
+          <p class="wallpaper-editor-label">Edit Wallpaper</p>
+          <div class="wallpaper-editor-preview" id="selected-wallpaper-to-edit-preview"></div>
+          <h2 class="wallpaper-editor-title">| Control Panel</h2>
+          <div class="wallpaper-editor-option-container">
+            <div class="wallpaper-editor-option-box">
+              <label class="wallpaper-editor-option-title"><svg xmlns="http://www.w3.org/2000/svg" class="wallpaper-editor-option-title-icon" viewBox="0 -960 960 960"  fill="#000000"><path d="M288-168 96-360l192-192 51 51-105 105h294v72H234l105 105-51 51Zm384-240-51-51 105-105H432v-72h294L621-741l51-51 192 192-192 192Z"/></svg>Width</label>
+              <input type="number" id="wallpaper-width-setting" class="wallpaper-editor-option-input-type ">
+            </div>
+            <div class="wallpaper-editor-option-box ">
+              <label class="wallpaper-editor-option-title"><svg xmlns="http://www.w3.org/2000/svg" class="wallpaper-editor-option-title-icon" viewBox="0 -960 960 960" fill="#000000"><path d="M696-480v-150l-57 57-51-51 144-144 144 144-51 51-57-57v150h-72ZM48-96l240-320 186 248h294L552-456 450-320l-45-60 147-196L912-96H48Zm402-72Z"/></svg>Height</label>
+              <input type="number" id="wallpaper-height-setting" class="wallpaper-editor-option-input-type ">
+            </div>
+          </div>
+          <div class="wallpaper-editor-option-container">
+            <div class="wallpaper-editor-option-box ">
+              <label class="wallpaper-editor-option-title"><svg xmlns="http://www.w3.org/2000/svg" class="wallpaper-editor-option-title-icon" viewBox="0 -960 960 960" fill="#000000"><path d="M96-96v-768h72v768H96Zm144-192v-96h384v96H240Zm0-288v-96h624v96H240Z"/></svg>Top Left</label>
+              <input type="number" id="wallpaper-topx-setting" class="wallpaper-editor-option-input-type ">
+            </div>
+            <div class="wallpaper-editor-option-box ">
+              <label class="wallpaper-editor-option-title"><svg xmlns="http://www.w3.org/2000/svg" class="wallpaper-editor-option-title-icon" viewBox="0 -960 960 960" fill="#000000"><path d="M216-528q-29 0-50.5-21.15T144-600v-144q0-29 21.5-50.5T216-816h528q29.7 0 50.85 21.5Q816-773 816-744v144q0 29.7-21.15 50.85Q773.7-528 744-528H216Zm0 384q-29 0-50.5-21.15T144-216v-144q0-29 21.5-50.5T216-432h528q29.7 0 50.85 21.5Q816-389 816-360v144q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm0-72h528v-144H216v144Z"/></svg>Top</label>
+              <input type="number" id="wallpaper-topy-setting" class="wallpaper-editor-option-input-type ">
+            </div>
+          </div>
+          <div class="wallpaper-editor-option-container">
+            <div class="wallpaper-editor-option-box ">
+              <label class="wallpaper-editor-option-title"><svg xmlns="http://www.w3.org/2000/svg" class="wallpaper-editor-option-title-icon" viewBox="0 -960 960 960" fill="#000000"><path d="M336-408h72v-60q0-20.4 13.8-34.2Q435.6-516 456-516h72v84l120-120-120-120v84h-96q-40 0-68 28t-28 68v84ZM168-264q-29.7 0-50.85-21.15Q96-306.3 96-336v-408q0-29.7 21.15-50.85Q138.3-816 168-816h624q29.7 0 50.85 21.15Q864-773.7 864-744v408q0 29.7-21.15 50.85Q821.7-264 792-264H168Zm0-72h624v-408H168v408Zm0 0v-408 408ZM48-144v-72h864v72H48Z"/></svg>Monitor</label>
+              <input type="number" id="wallpaper-display-monitor-setting" class="wallpaper-editor-option-input-type ">
+            </div>
+          </div>
+          <p class="wallpaper-editor-error-text" id="wallpaper-error-text"></p>
+          <button class="wallpaper-editor-save-settings-button" id="save-wallpaper-settings-button">Set</button>
+        </div>
+        <div class="settings-editor-section-container" id="settings-info-section">
+          <p class="settings-editor-label">Adjust your wallpapers</p>
+          <h2 class="settings-editor-title">| Settings Menu</h2>
+          <h3 class="settings-editor-sub-title">Make it yours:</h3>
+          <p class="settings-editor-recommendation-description">Adjust your preferences and wants based on enjoyment and performance in this page. Whatever you need, configure it here.</p>
+        </div>
+      </section>
+      <section class="main-section-container">
+        <div class="main-application-container" id="main-application-section">
+          <div class="main-section-choose-and-add-wallpaper-container">
+            <h1 class="main-section-choose-and-add-wallpaper-title">Animate Your Wallpaper</h1>
+            <p class="main-section-choose-and-add-wallpaper-subtitle">Change and animate your wallpaper here.</p>
+            <div class="main-section-wallpaper-list-container" id="stored-wallpapers-panel">
+              <div class="main-section-selected-wallpaper" id="selected-wallpaper-preview"></div>
+            </div>
+          </div>
+          <div class="main-section-extra-add-wallpaper-container">
+            <h2 class="main-section-extra-add-wallpaper-container-title">Add Wallpaper</h2>
+            <p class="main-section-extra-add-wallpaper-container-subtitle">Add a custom video to use as your wallpaper!</p>
+            <label for="extra-add-wallpaper-upload" class="main-section-extra-add-wallpaper-container-add-preview" style="background-image: url('./images/website/add-icon.svg');"></label>
+            <input type="file" accept=".mp4" id="extra-add-wallpaper-upload"></input>
+            <p class="main-section-extra-add-wallpaper-note" id="add-wallpaper-info-text">Author's Note* <br><br> Videos inputted should be no longer than a few seconds for performance and memory.</p>
+          </div>
+        </div>
+        <section class="main-section-settings-container" id="settings-section">
+          <h1 class="main-section-settings-title">Settings</h1>
+          <h2 class="main-section-settings-subtitle">Keep playing animated wallpaper when other applications are focused: </h2>
+          <p class="main-section-settings-description">Keep running will track when you interact with other applications and stop if you are interacted with another interaction. For example, when you click on google chrome, the animated wallpaper will stop!</p>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              <i class="dropdown-icon" style="background-image: url(./images/website/drop-down.svg);"></i>
+              <p class="dropdown-text" id="keep-running-when-focused-dropdown-text">Keep Running</p>
+            </button>
+            <div class="dropdown-content">
+              <button class="dropdown-choice-button" id="keep-running-when-other-applications-are-focused-choice">Keep Running</button>
+              <button class="dropdown-choice-button" id="stop-running-when-other-applications-are-focused-choice">Stop Running</button>
+            </div>
+          </div>
+          <h2 class="main-section-settings-subtitle">Keep playing animated wallpaper when other applications are maximized: </h2>
+          <p class="main-section-settings-description">Keep running will track maximized windows and only play your animated wallpaper when no other application is maximized. For example, if google chrome is in fullscreen, the animated wallpaper won't move.</p>
+          <div class="dropdown">
+            <button class="dropdown-button">
+              <i class="dropdown-icon" style="background-image: url(./images/website/drop-down.svg);"></i>
+              <p class="dropdown-text" id="keep-running-when-maximized-dropdown-text">Keep Running</p>
+            </button>
+            <div class="dropdown-content">
+              <button class="dropdown-choice-button" id="keep-running-when-other-applications-are-maximized-choice">Keep Running</button>
+              <button class="dropdown-choice-button" id="stop-running-when-other-applications-are-maximized-choice">Stop Running</button>
+            </div>
+          </div>
+          <h2 class="main-section-settings-subtitle">Framerate: </h2>
+          <p class="main-section-settings-description">The framerate dictates how fast frames of your video are painted, think of it like a speedometer where the higher framerate will adjust in a fastser video. For best performance, it is recommended a frame rate of around 16-60 frames per second.</p>
+          <input type="text" class="setting-type-number-input" id="set-framerate-setting-input">
+          <p class="error-settings-text" id="settings-error-text"></p>
+          <button class="save-settings-button" id="save-settings-button">Save</button>
+        </section>
+      </section>
+      
+    </main>
+  </body>
+</html>

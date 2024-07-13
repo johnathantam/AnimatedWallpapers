@@ -1,0 +1,683 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    background-color: #D9D9D9;
+    align-items: center;
+    justify-content: space-between;
+    border: solid;
+    border-style: none none solid none;
+    border-width: 1px;
+}
+
+.header-left-side-navigation-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.app-icon {
+    height: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #D3FF55;
+}
+
+.header-navigation-text {
+    height: 100%;
+    font-size: 120%;
+    white-space: nowrap;
+    margin-left: 9%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-left-side-navigation-icon {
+    margin-left: 2%;
+    height: 40%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    display: block;
+}
+
+.header-left-side-navigation-link {
+    margin-left: 3%;
+    font-size: 80%;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.header-left-side-navigation-link:hover {
+    cursor: pointer;
+    color: #b12bff;
+    text-decoration: underline;
+}
+
+.header-right-side-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 3%;
+}
+
+.header-right-side-app-status {
+    font-size: 90%;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.header-right-side-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 3%;
+}
+
+.header-right-side-app-status-switch {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    aspect-ratio: 5/1;
+    margin-left: 7%;
+}
+  
+.header-right-side-app-status-switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.header-right-side-app-status-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.header-right-side-app-status-switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 80%;
+    aspect-ratio: 1/1;
+    background-color: rgb(228, 214, 255);
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 4px;
+}
+
+.header-right-side-app-status-switch input:checked + .header-right-side-app-status-switch-slider {
+    background-color: #8d40ff;
+}
+
+.header-right-side-app-status-switch input:focus + .header-right-side-app-status-switch-slider {
+    box-shadow: 0 0 1px #8d40ff;
+}
+
+.header-right-side-app-status-switch input:checked + .header-right-side-app-status-switch-slider:before {
+    transform: translateX(3em);
+}
+
+.main-app-container {
+    width: 100%;
+    height: calc(92% - 1px); /* Account for the 1px border of the header */
+    background-color: #ffb6b6;
+    display: flex;
+}
+
+.wallpaper-editor-and-settings-container {
+    width: 20%;
+    height: 100%;
+    border: solid;
+    border-style: none solid none none;
+    border-width: 1px;
+    background-color: #B2ABAB;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding-bottom: 3%;
+}
+
+.wallpaper-editor-section-container {
+    width: 100%;
+    height: 100%;
+}
+
+.wallpaper-editor-label {
+    margin-left: 16%;
+    margin-top: 25%;
+    padding: 2% 6% 2% 6%;
+    display: inline-block;
+    font-size: 1vw;
+    background-color: aquamarine;
+}
+
+.wallpaper-editor-preview {
+    margin-top: 5%;
+    margin-left: 16%;
+    display: inline-block;
+    width: 75%;
+    aspect-ratio: 5/3;
+    background-color: blueviolet;
+    background-size: cover;
+}
+
+.wallpaper-editor-title {
+    font-size: 2vw;
+    margin-left: 16%;
+    margin-top: 4%;
+    font-weight: 600;
+}
+
+.wallpaper-editor-option-container {
+    margin-top: 8%;
+    margin-left: 16%;
+    width: 84%;
+    display: flex;
+    align-items: center;
+}
+
+.wallpaper-editor-option-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wallpaper-editor-option-box:nth-child(2) {
+    margin-left: 12%; /* Adjust margin as needed */
+}
+
+.wallpaper-editor-option-title {
+    font-size: 0.8vw;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    white-space: nowrap;
+}
+
+.wallpaper-editor-option-title-icon {
+    height: 1vw;
+    aspect-ratio: 1/1;
+}
+
+.wallpaper-editor-option-input-type {
+    width: 4.5vw;
+    height: 3vh;
+    font-size: 1vw;
+    padding: 1vh 0 1vh 0;
+    box-sizing: border-box;
+    background-color: #B2ABAB;
+    border: none;
+    border-bottom: 1px solid rgb(136, 18, 255);
+    outline: none;
+    margin-top: 15%;
+    font-size: 1vw;
+    font-weight: 300;
+}
+
+.wallpaper-editor-option-input-type input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.wallpaper-editor-error-text {
+    font-size: 0.7vw;
+    margin-left: 16%;
+    margin-top: 8%;
+    display: block;
+}
+
+.wallpaper-editor-save-settings-button {
+    border: none;
+    outline: none;
+    margin-left: 16%;
+    margin-top: 5%;
+    border-radius: 5px;
+    width: 7vw;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    background-color: #8d40ff;
+    font-size: 0.7vw;
+}
+
+.wallpaper-editor-save-settings-button:hover {
+    cursor: pointer;
+    background-color: #D3FF55;
+}
+
+.settings-editor-section-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.settings-editor-label {
+    margin-left: 16%;
+    margin-top: 25%;
+    padding: 2% 6% 2% 6%;
+    display: inline-block;
+    font-size: 1vw;
+    background-color: rgb(116, 130, 255);
+}
+
+.settings-editor-title {
+    font-size: 2vw;
+    margin-left: 16%;
+    margin-top: 4%;
+    font-weight: 600;
+}
+
+.settings-editor-sub-title {
+    font-size: 1vw;
+    margin-left: 16%;
+    margin-top: 10%;
+    font-weight: 400;
+}
+
+.settings-editor-recommendation-description {
+    font-size: 0.8vw;
+    margin-left: 16%;
+    margin-top: 4%;
+    font-weight: 300;
+    width: 80%;
+}
+
+.main-section-container {
+    width: 80%;
+    height: 100%;
+}
+
+.main-application-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.main-section-choose-and-add-wallpaper-container {
+    margin-left: 8%;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section-choose-and-add-wallpaper-title {
+    font-size: 2.5vw;
+    font-weight: 600;
+    margin-top: 12%;
+}
+
+.main-section-choose-and-add-wallpaper-subtitle {
+    font-size: 1vw;
+    font-weight: 300;
+    margin-top: 1%;
+}
+
+.main-section-wallpaper-list-container {
+    width: 100%;
+    height: 70%;
+    margin-top: 2%;
+    /* box-sizing: content-box; */
+    background-color: #ffffff00;
+    overflow-y: scroll;
+    border-bottom: solid;
+    border-width: 1px;
+    padding-bottom: 2%;
+}
+
+/* Hide scrollbar for list */
+.main-section-wallpaper-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+.main-section-selected-wallpaper {
+    width:100%;
+    aspect-ratio: 11/6;
+    background-color: #D3FF55;
+    border-radius: 15px;
+    margin-top: 1.5%;
+    background-size: cover;
+}
+
+.main-section-listed-pair-of-wallpapers-container {
+    width: 100%;
+    margin-top: 3%;
+    aspect-ratio: 12/3;
+    background-color: rgba(165, 42, 42, 0);
+    display: flex;
+    gap: 6%;
+}
+
+.main-section-listed-wallpapers {
+    width: 47%;
+    height: 100%;
+    background-color: #8d40ff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    position: relative;
+    background-size: cover;
+}
+
+.main-section-listed-wallpaper-action-buttons-container {
+    width: 100%;
+    position: absolute;
+    bottom: 3%;
+    left: 2%;
+    display: flex;
+    gap: 2%;
+}
+
+.main-section-listed-wallpaper-action-button {
+    padding: 1% 5% 1% 5%;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 0.7vw;
+    font-weight: 350;
+    background-color: rgb(216, 255, 139);
+}
+
+.main-section-listed-wallpaper-action-button:hover {
+    cursor: pointer;
+    background-color: #ffb6b6;
+}
+
+.main-section-listed-wallpapers-add-wallpaper-input {
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #D3FF55;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10%;
+}
+
+.main-section-listed-wallpapers-add-wallpaper-input:hover {
+    cursor: pointer;
+    background-color: #60eaff;
+}
+
+.main-section-extra-add-wallpaper-container {
+    margin-left: 7%;
+    width: 25%;
+    height: 100%;
+}
+
+.main-section-extra-add-wallpaper-container-title {
+    font-size: 1.1vw;
+    font-weight: 600;
+    margin-top: 42%;
+}
+
+.main-section-extra-add-wallpaper-container-subtitle {
+    font-size: 0.7vw;
+    font-weight: 300;
+    margin-top: 5%;
+}
+
+.main-section-extra-add-wallpaper-container-subtitle {
+    font-size: 0.7vw;
+    font-weight: 300;
+    margin-top: 5%;
+}
+
+.main-section-extra-add-wallpaper-container-add-preview {
+    display: block;
+    margin-top: 4%;
+    width: 80%;
+    aspect-ratio: 5/3;
+    background-color: #8d40ff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10%;
+}
+
+.main-section-extra-add-wallpaper-container-add-preview:hover {
+    cursor: pointer;
+    background-color: #d3b6ff;
+}
+
+.main-section-extra-add-wallpaper-button {
+    margin-top: 7%;
+    font-size: 0.7vw;
+    padding: 2% 5% 2% 5%;
+    background-color: #8d40ff;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+.main-section-extra-add-wallpaper-button:hover {
+    cursor: pointer;
+    background-color: #c59eff;
+}
+
+.main-section-extra-add-wallpaper-note {
+    margin-top: 15%;
+    font-size: 0.7vw;
+    font-weight: 300;
+    width: 80%;
+    padding-bottom: 5%;
+}
+
+.main-section-settings-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-y: scroll;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+}
+
+.main-section-settings-title {
+    font-size: 2.5vw;
+    font-weight: 600;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.main-section-settings-subtitle {
+    font-size: 0.9vw;
+    font-weight: 400;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.main-section-settings-subtitle:first-of-type {
+    margin-top: 2%;
+}
+
+.main-section-settings-description {
+    font-size: 0.8vw;
+    font-weight: 300;
+    margin-top: 1%;
+    margin-left: 6%;
+    width: 50%;
+}
+
+.dropdown {
+    margin-top: 2%;
+    margin-left: 6%;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    width: 8vw;
+    aspect-ratio: 11/2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: solid;
+    border-width: 1px;
+    font-size: 0.7vw;
+    background-color: #c2ffd1;
+}
+
+.dropdown-icon {
+    width: 10%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    margin-left: 2%;
+}
+
+.dropdown-text {
+    white-space: nowrap;
+    margin-left: 6%;
+}
+
+.dropdown-content {
+    margin-top: 0.8%;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: calc(8vw - 2px);
+    z-index: 1;
+    border: solid;
+    border-width: 1px;
+    flex-direction: column;
+}
+
+.dropdown-choice-button {
+    width: 100%;
+    flex-grow: 1;
+    font-size: 0.7vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: none;
+    outline: none;
+}
+
+/* Show dropdown content when dropdown is hovered with animations */
+.dropdown:hover .dropdown-content {
+    display: flex;
+    animation: dropdown-content-hovered-animation 0.1s ease forwards;
+}
+
+.dropdown:hover .dropdown-icon {
+    animation: dropdown-icon-hovered-animation 0.1s ease forwards;
+}
+
+.dropdown-choice-button:hover {
+    background-color: rgb(234, 244, 249);
+}
+
+@keyframes dropdown-content-hovered-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdown-icon-hovered-animation {
+    0% {
+        
+    }
+    100% {
+        transform: rotateZ(180deg);
+    }
+}
+
+.setting-type-number-input {
+    width: 8vw;
+    aspect-ratio: 9/2;
+    padding-bottom: 0.2%;
+    box-sizing: border-box;
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: 1px solid rgb(136, 18, 255);
+    outline: none;
+    margin-top: 2%;
+    margin-left: 6%;
+    font-size: 0.9vw;
+    font-weight: 300;
+}
+
+.error-settings-text {
+    font-size: 0.8vw;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.save-settings-button {
+    display: block;
+    margin-left: 6%;
+    margin-top: 1%;
+    padding: 0.7% 2.5% 0.7% 2.5%;
+    font-size: 0.7vw;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background-color: #c59eff;
+}
+
+.save-settings-button:hover {
+    cursor:pointer;
+    background-color: #934bff;
+}
+
+.error-animation {
+    animation: error 0.5s ease-in;
+    background-color: rgb(255, 35, 105);
+}
+
+@keyframes error {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+::-webkit-scrollbar {
+    width: 3px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8d1aff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8f5cff; /* Color when hovering over the scrollbar thumb */
+}
+
+input[type="file"] {
+    display: none;
+}
